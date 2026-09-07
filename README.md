@@ -1,37 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Website Portofolio Kelompok - Liquid Glass 🌊
 
-## Getting Started
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-blue?style=for-the-badge)](https://paulfajar17.github.io/UI-UX/)
 
-First, run the development server:
+Proyek ini adalah sebuah **Single-page Portofolio Kelompok** yang dibangun sebagai tugas mata kuliah Desain Antarmuka Pengguna (UI/UX). Website ini mengusung tema **Liquid Glass** (Glassmorphism Modern) yang menggabungkan elemen tembus pandang, *blur*, dan animasi dinamis untuk menciptakan pengalaman antarmuka yang elegan dan premium.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Fitur Utama
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Tema Liquid Glass:** Elemen UI bergaya kaca dengan *backdrop-blur* dan *border* semi-transparan.
+- **Dynamic Background:** Gradien gelap dengan orbs animasi (*blob*) yang memberikan kesan cairan *(liquid)* bergerak secara lambat.
+- **Floating Navbar:** Menu navigasi melayang yang responsif dengan efek gelembung transparan (*bubble hover*).
+- **Smooth Animations:** Efek *hover scale/glow* menggunakan Framer Motion.
+- **Fully Responsive:** Layout rapi dan fungsional di perangkat seluler, tablet, maupun desktop.
+- **Dark Mode Friendly:** Tema bawaan difokuskan pada nuansa gelap agar efek *glass* lebih menonjol.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Teknologi yang Digunakan
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **[Next.js](https://nextjs.org/)** (App Router)
+- **[TypeScript](https://www.typescriptlang.org/)**
+- **[Tailwind CSS](https://tailwindcss.com/)**
+- **[Framer Motion](https://www.framer.com/motion/)** (untuk animasi)
+- **[Lucide React](https://lucide.dev/)** (untuk ikon)
 
-## Learn More
+## 💻 Cara Menjalankan Lokal
 
-To learn more about Next.js, take a look at the following resources:
+Jika Anda ingin menjalankan proyek ini di mesin lokal, ikuti langkah berikut:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone repositori ini:
+   ```bash
+   git clone https://github.com/paulfajar17/UI-UX.git
+   cd UI-UX
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Instal dependensi:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Jalankan development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# UI-UX
+## 🌐 Live Demo
+
+Kunjungi situs live portofolio ini yang di-*deploy* melalui GitHub Pages:
+**[https://paulfajar17.github.io/UI-UX/](https://paulfajar17.github.io/UI-UX/)**
+
+---
+*Tugas Mata Kuliah UI/UX - Kelompok Liquid Glass &copy; 2026*
