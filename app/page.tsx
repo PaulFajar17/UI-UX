@@ -1,23 +1,18 @@
 import { Background } from "@/components/Background";
 import { Navbar } from "@/components/Navbar";
-import { WorkSection } from "@/components/WorkSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ContactSection } from "@/components/ContactSection";
+import { Hero } from "@/components/Hero";
+import { TeamSection } from "@/components/TeamSection";
+import { KaryaCTA } from "@/components/KaryaCTA";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen flex flex-col">
       <Background />
       <Navbar />
-      
-      {/* Spacer for floating navbar */}
-      <div className="h-24"></div>
-      
-      <WorkSection />
-      <AboutSection />
-      <ContactSection />
-      
+      <Hero />
+      <TeamSection />
+      <KaryaCTA />
       <Footer />
     </main>
   );

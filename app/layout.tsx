@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
-  variable: "--font-sans",
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Portofolio Kelompok | Liquid Glass",
-  description: "Website portofolio tugas mata kuliah dengan tema Liquid Glass",
+  title: "Portofolio Kelompok 4 | UI/UX",
+  description: "Portofolio desain UI/UX kelompok kami: kenalan dengan tim dan lihat karya Figma kami.",
 };
 
 export default function RootLayout({
@@ -18,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${inter.variable} h-full antialiased`}>
+    <html lang="id" className={`${inter.variable} ${bricolage.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col relative bg-background text-foreground overflow-x-hidden">
         {children}
       </body>
