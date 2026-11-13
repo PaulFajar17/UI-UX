@@ -1,39 +1,78 @@
 @import "tailwindcss";
 
+/*
+ * Tema: dasar krem hangat, tinta ungu tua,
+ * aksen cerah. Semua warna dipakai lewat token di bawah.
+ */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-cream: #fff7ec;
+  --color-paper: #fffdf9;
+  --color-ink: #231b3a;
+  --color-ink-soft: #5b5470;
+  --color-coral: #ff6b57;
+  --color-mint: #22c3a4;
+  --color-sun: #ffc23d;
+  --color-lilac: #8b77ff;
+  --color-sky: #3fb3ff;
+  --color-stick: #e8cfa6;
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bricolage);
 }
 
 :root {
-  /* Default to a dark theme for the liquid glass effect to pop */
-  --background: #05050f;
-  --foreground: #f8fafc;
+  --background: #fff7ec;
+  --foreground: #231b3a;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: clip;
 }
 
-/* Glassmorphism utility classes to use across components */
+::selection {
+  background: #ffc23d;
+  color: #231b3a;
+}
+
 @layer utilities {
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
+  /* Kartu lembut dengan bayangan "tebal" khas desain playful */
+  .card-soft {
+    @apply bg-paper rounded-[28px] border-2 border-ink/90 shadow-[6px_6px_0_0_var(--color-ink)];
   }
-  .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-2xl;
+  .btn-pop {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-ink bg-sun px-5 py-2.5 font-semibold text-ink shadow-[3px_3px_0_0_var(--color-ink)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_var(--color-ink)] active:translate-y-0.5 active:shadow-[1px_1px_0_0_var(--color-ink)];
   }
-  .glass-input {
-    @apply bg-white/5 backdrop-blur-md border border-white/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all;
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border-2 border-ink bg-paper px-5 py-2.5 font-semibold text-ink transition-all duration-200 hover:bg-ink hover:text-cream;
   }
-  .glass-button {
-    @apply bg-white/5 hover:bg-white/20 backdrop-blur-md border border-white/10 hover:border-white/30 rounded-xl hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-95 transition-all duration-300;
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border-2 border-ink/80 bg-paper px-3 py-1 text-xs font-semibold text-ink;
   }
+  .font-display {
+    font-family: var(--font-bricolage), var(--font-inter), system-ui, sans-serif;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
 }

@@ -1,55 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+
+const blobs = [
+  { color: "#ffc23d", className: "top-[-12%] left-[-8%] w-[42vw] h-[42vw]", x: [0, 60, 0], y: [0, 40, 0], d: 22 },
+  { color: "#ff6b57", className: "top-[35%] right-[-12%] w-[36vw] h-[36vw]", x: [0, -50, 0], y: [0, 60, 0], d: 26 },
+  { color: "#22c3a4", className: "bottom-[-15%] left-[20%] w-[40vw] h-[40vw]", x: [0, 40, 0], y: [0, -50, 0], d: 30 },
+];
 
 export function Background() {
+  const reduce = useReducedMotion();
+
   return (
-    <div className="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
-      {/* Dynamic Gradient Background */}
-      <div className="absolute inset-0 bg-[#05050f]" />
-      
-      {/* Animated Blobs / Orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-          rotate: [0, 90, 0],
+    <div className="fixed inset-0 overflow-hidden -z-10 pointer-events-none bg-cream">
+      {blobs.map((b, i) => (
+        <motion.div
+          key={i}
+          className={`absolute rounded-full blur-[90px] opacity-25 ${b.className}`}
+          style={{ backgroundColor: b.color }}
+          animate={reduce ? undefined : { x: b.x, y: b.y, scale: [1, 1.08, 1] }}
+          transition={{ duration: b.d, repeat: Infinity, ease: "easeInOut" }}
+        />
+      ))}
+      {/* titik-titik halus supaya latar tidak polos */}
+      <div
+        className="absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage: "radial-gradient(rgba(35,27,58,0.18) 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
         }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-purple-600/30 blur-[100px]"
-      />
-      
-      <motion.div
-        animate={{
-          scale: [1, 1.5, 1],
-          opacity: [0.2, 0.4, 0.2],
-          rotate: [0, -90, 0],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-blue-600/30 blur-[120px]"
-      />
-      
-      <motion.div
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.2, 0.4, 0.2],
-          x: [0, 100, 0],
-          y: [0, -50, 0],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-[30%] left-[40%] w-[40%] h-[40%] rounded-full bg-pink-600/20 blur-[100px]"
       />
     </div>
   );
